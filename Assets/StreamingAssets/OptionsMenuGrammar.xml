@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<grammar version="1.0" xml:lang="en-US" mode="voice"
+         root="OptionsScreen" tag-format="semantics/1.0"
+         xmlns="http://www.w3.org/2001/06/grammar" >
+
+  <rule id="OptionsScreen" scope="public">
+    <one-of>
+
+      <item>
+        <ruleref uri="#mute" />
+      </item>
+
+      <item>
+        <ruleref uri="#exit" />
+      </item>
+
+    </one-of>
+  </rule>
+
+  <!-- Used to mute audio in options menu -->
+  <rule id="mute">
+      <item>
+        <tag>out.action = "mute";</tag>
+        <one-of>
+          <item> Mute sound </item>
+          <item> Stop Sound </item>
+          <item> Please Mute audio for game </item>
+        </one-of>
+      </item>
+  </rule>
+
+  <!-- Used to exit the options menu to return back to the main menu -->
+  <rule id="exit">
+      <item>
+        <tag>out.action = "exit";</tag>
+        <one-of>
+          <item> Leave</item>
+          <item> Exit Options </item>
+          <item> Return to the main menu</item>
+        </one-of>
+      </item>
+  </rule>
+  
+</grammar>

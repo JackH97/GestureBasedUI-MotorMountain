@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<grammar version="1.0" xml:lang="en-US" mode="voice"
+         root="MainMenu" tag-format="semantics/1.0"
+         xmlns="http://www.w3.org/2001/06/grammar" >
+
+  <rule id="MainMenu" scope="public">
+    <one-of>
+
+      <item>
+        <ruleref uri="#startstate" />
+      </item>
+
+      <item>
+        <ruleref uri="#optionsstate" />
+      </item>
+
+      <item>
+        <ruleref uri="#quitstate" />
+      </item>
+
+    </one-of>
+  </rule>
+
+  <!-- Used for starting a new game from main menu -->
+  <rule id="startstate">
+      <item>
+        <tag>out.action = "new";</tag>
+        <one-of>
+          <item> Start a new game </item>
+          <item> Begin a new game </item>
+          <item> New game </item>
+          <item> I want to play a game </item>
+        </one-of>
+      </item>
+  </rule>
+
+  <!-- Used for going to the options menu from main menu -->
+  <rule id="optionsstate">
+      <item>
+        <tag>out.action = "option";</tag>
+        <one-of>
+          <item> Go to Options </item>
+          <item> Options Menu </item>
+          <item> Options </item>
+          <item> I want to go to the Options Menu </item>
+        </one-of>
+      </item>
+  </rule>
+
+  <!-- Used to quit game from main menu -->
+  <rule id="quitstate">
+      <item>
+        <tag>out.action = "quit";</tag>
+        <one-of>
+          <item> finish the game </item>
+          <item> exit game </item>
+          <item> I give up </item>
+        </one-of>
+      </item>
+  </rule>
+
+</grammar>
