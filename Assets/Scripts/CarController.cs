@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Needed for Myo Support
 using LockingPolicy = Thalmic.Myo.LockingPolicy;
 using Pose = Thalmic.Myo.Pose;
 using UnlockType = Thalmic.Myo.UnlockType;
@@ -40,6 +41,8 @@ public class CarController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        // If user wants to play with arrow keys
         //movement = Input.GetAxis("Horizontal");
         if(Input.GetKey(KeyCode.RightArrow))
         {
@@ -59,6 +62,7 @@ public class CarController : MonoBehaviour
         // Access the ThalmicMyo component attached to the Myo game object.
         ThalmicMyo thalmicMyo = myo.GetComponent<ThalmicMyo> ();
 
+        // Used for the Myo Gestures to go forward and back
         if (thalmicMyo.pose != _lastPose) {
 
             if(thalmicMyo.pose == Pose.WaveIn)
@@ -82,6 +86,8 @@ public class CarController : MonoBehaviour
         
     }
 
+    // Used for the Fuel when you run out the car basically 
+    // wont be allowed to move with the controls
     private void FixedUpdate()
     {
         if(fuel>0)

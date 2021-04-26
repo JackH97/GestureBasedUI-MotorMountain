@@ -6,6 +6,7 @@ using System.IO;
 using System.Text;  // for stringbuilder
 using UnityEngine.Windows.Speech;
 
+// Includes the Voice reconigiction methods to work from the .xml files
 public class Options : MonoBehaviour
 {
     private bool isMuted;
@@ -56,6 +57,7 @@ public class Options : MonoBehaviour
 
     private void Update()
     {
+        // Keywords to recieve from the .xml file
         switch (KeyWord)
         {
             case "mute":
@@ -67,7 +69,7 @@ public class Options : MonoBehaviour
         }
     }
     
-
+    // When mute toggle is clicked the volume is mutted or unmutted
     void Start()
     {
         isMuted = PlayerPrefs.GetInt("MUTED") == 1;

@@ -59,6 +59,8 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    // For the scenes to resume game, return to main menu or leave game.
+
     public void Resume()
     {
         pauseMenuUI.SetActive(false);

@@ -6,7 +6,7 @@ using UnityEngine.Windows.Speech;
 using System.IO;
 using System.Text;  // for stringbuilder
 
-
+// Includes the Voice reconigiction methods to work from the .xml files
 
 public class MainMenu : MonoBehaviour
 {
@@ -48,6 +48,7 @@ public class MainMenu : MonoBehaviour
     }
     private void Update()
     {
+        // Keywords to recieve from the .xml file
         switch (KeyWord)
         {
             case "new":
@@ -73,6 +74,7 @@ public class MainMenu : MonoBehaviour
 
 
     // Start is called before the first frame update
+    // the methods to change scenes or quit game
     public void PlayGame ()
     {
         SceneManager.LoadScene("Game");

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Follow : MonoBehaviour
 {
+    // Camera to follow the player as he progresses in the level
     public Transform target; 
     private Vector3 offset;
     // Start is called before the first frame update
